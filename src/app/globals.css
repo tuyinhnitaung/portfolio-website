@@ -1,26 +1,94 @@
-@import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3 { font-family: var(--font-heading), ui-sans-serif, system-ui; }
+  body { font-family: var(--font-body), ui-sans-serif, system-ui; }
+}
+
+/* === palette (light/dark) === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #ffffff;          /* page background */
+  --surface: #ffffff;     /* card/nav surfaces */
+  --text: #111111;        /* primary text (near-black) */
+  --accent: #7C3AED;      /* accents (active underline, primary buttons) */
+  --link: #7C3AED;        /* link color */
+  --border: #e5e7eb;      /* light gray border */
+  --surface-text: #111111;/* text on surface backgrounds */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --bg: #0b0b0b;          /* near-black */
+  --surface: #141414;     /* panel/card surface */
+  --text: #f3f4f6;        /* near-white text */
+  --accent: #A78BFA;      /* accents flip to white in dark */
+  --link: #A78BFA;        /* links in dark */
+  --border: #262626;      /* dark gray border */
+  --surface-text: #f3f4f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base colors */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* === Reusable helpers === */
+@layer components {
+  .card {
+    @apply rounded-xl border shadow-sm;
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--surface-text);
+  }
+
+  .link {
+    color: var(--link);
+  }
+  .link:hover { text-decoration: underline; filter: brightness(0.95); }
+
+  /* Custom highlight colors */
+  .highlight-1 { 
+    background: color-mix(in oklab, #7C3AED 30%, transparent); 
+  }
+  .highlight-2 { 
+    background: color-mix(in oklab, #059669 30%, transparent); 
+  }
+  .highlight-3 { 
+    background: color-mix(in oklab, #DC2626 30%, transparent); 
+  }
+  
+  /* Dark mode versions - high contrast colors */
+  .dark .highlight-1 { 
+    background: color-mix(in oklab, #32047c 80%, transparent); 
+  }
+  .dark .highlight-2 { 
+    background: color-mix(in oklab, #01515f 80%, transparent); 
+  }
+  .dark .highlight-3 { 
+    background: color-mix(in oklab, #614901 80%, transparent); 
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium;
+    border-color: var(--border);
+    background: var(--surface);
+    color: var(--surface-text);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Highlight text selections with accent */
+::selection {
+  background: color-mix(in oklab, var(--accent) 30%, transparent);
+  color: var(--bg);
+}
+
+/* Nicer focus ring using the accent */
+:where(.btn, a, button):focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--bg),
+    0 0 0 4px color-mix(in oklab, var(--accent) 65%, transparent);
 }
