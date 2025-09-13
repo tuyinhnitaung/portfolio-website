@@ -265,7 +265,7 @@ export default function Page() {
                   <Highlight delay={1000} colorClass="highlight-3">Location</Highlight>
                 </h3>
                 <p className="text-muted-foreground mb-2">{PROFILE.location}</p>
-                <p className="text-sm text-muted-foreground">Open to part-time roles & freelance projects</p>
+                <p className="text-sm text-muted-foreground">Open to part-time/full-time roles & freelance projects</p>
               </div>
             </div>
 
