@@ -20,12 +20,12 @@ export default function Page() {
           <div className="grid items-center gap-10 md:grid-cols-2 w-full">
             <div>
               <h1 className="text-balance text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-                Hello, I'm <Highlight delay={300} colorClass="highlight-1">Tu Yin</Highlight>!
+                Hello, I’m <Highlight delay={300} colorClass="highlight-1">Tu Yin</Highlight>!
               </h1>
               <p className="mt-5 max-w-prose text-muted-foreground text-base">
-                I'm a Computer Programming and Analysis student who loves diving into all kinds of <Highlight delay={300} colorClass="highlight-2">tech</Highlight>. 
+                I’m a Computer Programming and Analysis student who loves diving into all kinds of <Highlight delay={300} colorClass="highlight-2">tech</Highlight>. 
                 <br /><br />
-                I'm building a <Highlight delay={600} colorClass="highlight-3">diverse</Highlight> skill set that spans <Highlight delay={900} colorClass="highlight-2">web</Highlight> development, <Highlight delay={1200} colorClass="highlight-1">software engineering</Highlight>, and <Highlight delay={1500} colorClass="highlight-3">data science</Highlight>. 
+                I’m building a <Highlight delay={600} colorClass="highlight-3">diverse</Highlight> skill set that spans <Highlight delay={900} colorClass="highlight-2">web</Highlight> development, <Highlight delay={1200} colorClass="highlight-1">software engineering</Highlight>, and <Highlight delay={1500} colorClass="highlight-3">data science</Highlight>. 
                 <br /><br />
                 I thrive on being <Highlight delay={1800} colorClass="highlight-1">adaptable</Highlight> and learning new technologies, always looking for opportunities to apply both my technical skills and <Highlight delay={2100} colorClass="highlight-2">analytical</Highlight> mindset to solve real-world problems.
               </p>
@@ -229,10 +229,10 @@ export default function Page() {
         >
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-              Let's <Highlight delay={600} colorClass="highlight-1">Connect</Highlight>
+              Let’s <Highlight delay={600} colorClass="highlight-1">Connect</Highlight>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about tech. 
+              I’m always open to discussing new opportunities, collaborations, or just having a chat about tech. 
               Feel free to reach out!
             </p>
           </div>
